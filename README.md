@@ -10,7 +10,7 @@ This module has a simple DQN
 
 To install it: 
 
-'''
-sudo pip3.6 install --prefix ./python3  -e .
-'''
+`pip install --prefix ./python3  -e .`
+
+there is a 
 
