@@ -12,5 +12,11 @@ To install it:
 
 `pip install --prefix ./python3  -e .`
 
-there is a 
+where --prefix ./python3 is my local virtualenv. 
+
+to use DQN just 
+
+`from DQN import DQN`
+
+
 
