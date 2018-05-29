@@ -43,6 +43,7 @@ class DQN:
             # print("e-greedy: {}".format(action))
         else:
             predictions = self.model.predict(vector)[0]
+            self.env.predictions = predictions
             action = np.argmax(predictions)
             # print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
 
