@@ -45,7 +45,7 @@ class DQN:
             predictions = self.model.predict(vector)[0]
             self.env.predictions = predictions
             action = np.argmax(predictions)
-            # print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
+            print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
 
         return action
 
