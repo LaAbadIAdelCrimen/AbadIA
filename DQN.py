@@ -1,6 +1,7 @@
 import random
 import numpy as np
-from keras.models import Sequential
+
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Dropout
 from keras.optimizers import Adam
 from collections import deque
@@ -17,8 +18,12 @@ class DQN:
         self.learning_rate = 0.005
         self.tau = .125
 
-        self.model        = self.create_model()
-        self.target_model = self.create_model()
+        if env.modelName == None:
+            self.model        = self.create_model()
+            self.target_model = self.create_model()
+        else:
+            self.model        = self.load_model(env.modelName)
+            self.target_model = self.load_model(env.modelName)
 
     def create_model(self):
         model   = Sequential()
@@ -30,6 +35,9 @@ class DQN:
         model.compile(loss="mean_squared_error",
             optimizer=Adam(lr=self.learning_rate))
         return model
+
+    def load_model(self, name):
+        model = load_model(name)
 
     def act(self, state):
         self.epsilon *= self.epsilon_decay
@@ -45,7 +53,7 @@ class DQN:
             predictions = self.model.predict(vector)[0]
             self.env.predictions = predictions
             action = np.argmax(predictions)
-            print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
+            # print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
 
         return action
 
