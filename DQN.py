@@ -26,6 +26,7 @@ class DQN:
             self.target_model = self.load_model(env.modelName)
 
     def create_model(self):
+        print("Creating a new model")
         model   = Sequential()
         state_shape  = self.env.observation_space.shape
         model.add(Dense(24, input_dim=state_shape[0], activation="relu"))
@@ -37,6 +38,7 @@ class DQN:
         return model
 
     def load_model(self, name):
+        print("Loading a model from: ({})".format(name))
         model = load_model(name)
 
     def act(self, state):
