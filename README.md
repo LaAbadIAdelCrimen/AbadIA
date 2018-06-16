@@ -14,7 +14,7 @@ To install it:
 
 where --prefix ./python3 is my local virtualenv. 
 
-to use DQN just 
+to use DQN just:
 
 `from DQN import DQN`
 
