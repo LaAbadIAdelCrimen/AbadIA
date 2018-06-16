@@ -39,7 +39,7 @@ class DQN:
 
     def load_model(self, name):
         print("Loading a model from: ({})".format(name))
-        model = load_model(name)
+        return load_model(name)
 
     def act(self, state):
         self.epsilon *= self.epsilon_decay
