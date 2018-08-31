@@ -22,6 +22,9 @@ class DQN:
             self.model        = self.create_model()
             self.target_model = self.create_model()
         else:
+            if (env.gsBucket != None):
+                env.download_blog(env.modelName, env.modelName)
+
             self.model        = self.load_model(env.modelName)
             self.target_model = self.load_model(env.modelName)
 
