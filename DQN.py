@@ -23,6 +23,7 @@ class DQN:
             self.target_model = self.create_model()
         else:
             if (env.gsBucket != None):
+                print("I will download from {} the file {}".format(env.gsBucket, env.modelName))
                 env.download_blob(env.modelName, env.modelName)
 
             self.model        = self.load_model(env.modelName)
@@ -53,12 +54,12 @@ class DQN:
 
         if np.random.random() < self.epsilon:
             action = self.env.action_space.sample()
-            # print("e-greedy: {}".format(action))
+            print("e-greedy: {}".format(action))
         else:
             predictions = self.model.predict(vector)[0]
             self.env.predictions = predictions
             action = np.argmax(predictions)
-            # print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
+            print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
 
         return action
 
