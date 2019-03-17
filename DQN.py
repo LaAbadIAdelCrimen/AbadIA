@@ -13,7 +13,7 @@ class DQN:
 
         self.gamma = 0.85
         self.epsilon = 1.0
-        self.epsilon_min = 0.01
+        self.epsilon_min = 0.0001 # previously 0.01
         self.epsilon_decay = 0.995
         self.learning_rate = 0.005
         self.tau = .125
@@ -54,12 +54,21 @@ class DQN:
 
         if np.random.random() < self.epsilon:
             action = self.env.action_space.sample()
-            print("e-greedy: {}".format(action))
+            print("e-greedy: {}  epsilon: {}<----               ".format(action, self.epsilon))
         else:
             predictions = self.model.predict(vector)[0]
             self.env.predictions = predictions
-            action = np.argmax(predictions)
-            print("vector: {} predictions: {} action: {}".format(vector, predictions, action))
+            final = np.zeros(9)
+            for ii in range(0,9):
+                if (self.env.valMovs[ii] >= 1):
+                    final[ii] = predictions[ii]*1.5
+                else:
+                    final[ii] = predictions[ii]*0.5
+
+            action = np.argmax(final)
+            print("vector: {}                   ".format(vector))
+            print("predictions: {}              ".format(predictions))
+            print("action: {}                   ".format(action))
 
         return action
 
@@ -80,7 +89,8 @@ class DQN:
             else:
                 Q_future = max(self.target_model.predict(new_state)[0])
                 target[0][action] = reward + Q_future * self.gamma
-            self.model.fit(state, target, epochs=1, verbose=0)
+            history = self.model.fit(state, target, epochs=1, verbose=0)
+            # print("loss:", history.history["loss"], "\n")
 
     def target_train(self):
         weights = self.model.get_weights()
