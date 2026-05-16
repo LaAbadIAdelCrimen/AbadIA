@@ -6,7 +6,7 @@ This is the canonical source of truth for all autonomous agents (Gemini-cli, Ant
 abadIA does not depend on a specific model's flavor. We design for **Agent-First Engineering**, where the Harness governs the Model.
 
 ## 2. Operating Standards (HE v3.0)
-All agents must adhere to the 7-step deterministic cycle:
+All agents must adhere to the **Osmani Standard (Spec-Plan-Build-Verify)** and the 7-step deterministic cycle:
 1. **Declaration:** Identify yourself and state your assumptions before acting.
 2. **Contracting:** Create/update `SPEC.md` or a Service-Level ADR in `docs/adr/`.
 3. **The Beyoncé Rule:** Tests in `tests/` MUST exist and FAIL before logic is implemented.

@@ -6,6 +6,7 @@
 - El manifiesto de la Ingeniería Agéntica: El fin del "prompting" y el inicio del "harnessing".
 
 ### Parte I: El Método de los 7 Pasos (HE v3.0)
+0. **Paso 0: El Ciclo Osmani (Spec-Plan-Build-Verify).** El arnés de proceso que gobierna a Guillermo.
 1. **Paso 1: Anti-racionalización.** Identificando las asunciones falsas en el código de navegación actual.
 2. **Paso 2: La Especificación Soberana.** Creando `AGENTS.md` y `SPECS.md` como contratos innegociables.
 3. **Paso 3: El Plan Atómico.** Dividiendo la supervivencia monástica en micro-misiones.
