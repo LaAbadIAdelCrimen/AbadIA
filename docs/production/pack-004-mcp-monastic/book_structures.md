@@ -14,7 +14,13 @@
 6. **Paso 6: Verificación en el Scriptorium.** Ciclos de test-time evolution y corrección de errores.
 7. **Paso 7: Destilación (Skillify).** Cómo convertir una partida exitosa en una Skill permanente.
 
-### Parte II: Infraestructura de Próxima Generación
+### Parte II: El Vault: El Puente entre la Verdad y la Acción
+- **La Cámara de la Verdad:** Por qué el Vault es el corazón de HE v3.0.
+- **El ST-Loop (Spec-to-Task):** Cómo transformar requisitos humanos en tareas agénticas sin alucinaciones.
+- **Microservicios y Contratos:** Documentando el entorno técnico para que la IA lo entienda.
+- **Políticas de Seguridad:** El Obsequium como código de conducta del agente.
+
+### Parte III: Infraestructura de Próxima Generación
 - **El MCP Server:** El sistema nervioso de la Abadía.
 - **Dreamer & Ratchet:** Implementando la co-evolución del agente mientras duerme.
 - **Antigravity:** Tu IDE como centro de comando soberano.
