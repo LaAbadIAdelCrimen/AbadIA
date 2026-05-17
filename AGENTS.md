@@ -18,6 +18,7 @@ All agents must adhere to the **Osmani Standard (Spec-Plan-Build-Verify)** and t
 ## 3. Toolchain & Interaction
 - **Primary Interface:** `gemini-cli` + `antigravity`.
 - **Memory:** `antigravity` (Honcho) captures the "Dreamer" state.
+- **Skills:** This repository contains local skills in `.hermes/skills/`. Agents MUST load these skills (e.g., using `skill_view`) to handle project-specific workflows like `skillify`.
 - **Verification:** `pytest` + `ruff`.
 
 ## 4. Atomic Teaching Protocol
