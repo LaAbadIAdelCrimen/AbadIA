@@ -16,19 +16,28 @@ All agents must adhere to the **Osmani Standard (Spec-Plan-Build-Verify)** and t
    - Refactor if complexity exceeds agentic context efficiency.
 
 ## 3. Toolchain & Interaction
+- **Primary Harness:** `ralph-loop.sh` (The Ralph Loop).
 - **Primary Interface:** `gemini-cli` + `antigravity`.
 - **Memory:** `antigravity` (Honcho) captures the "Dreamer" state.
-- **Skills:** This repository contains local skills in `.hermes/skills/`. Agents MUST load these skills (e.g., using `skill_view`) to handle project-specific workflows like `skillify`.
+- **Skills:** This repository contains local skills in `.hermes/skills/`. Agents MUST load these skills (e.g., using `skill_view`) to handle project-specific workflows.
 - **Verification:** `pytest` + `ruff`.
 
-## 4. Atomic Teaching Protocol
+## 4. The Ralph Loop (The Ratchet)
+The Ralph Loop is the primary execution engine for long, unattended tasks.
+- **Workflow:** Fresh session per iteration -> State lives in `plan/plan.md` and `plan/task/NN.md`.
+- **Stop Signal:** Creation of `stop.md` (manual or agentic).
+- **Commands:**
+  - `/ralph set-up`: Initialize the plan structure.
+  - `/ralph fase0`: Decompose plan into actionable tasks.
+
+## 5. Atomic Teaching Protocol
 No task is "Done" until the educational artifacts are generated:
 - **Log:** Update `docs/wiki/log.md`.
 - **Teaching:** New concept in `docs/wiki/concepts/`.
 - **Production:** New pack in `docs/production/`.
 
-## 5. Visual Standards
+## 6. Visual Standards
 Use the Lattice Visual System (Cyan/Emerald/Violet) for all architecture assets.
 
 ---
-*Identity: Agent-Native | Standard: HE v3.0*
+*Identity: Agent-Native | Standard: HE v3.0 | Engine: Ralph*
